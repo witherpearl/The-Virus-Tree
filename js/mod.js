@@ -1,8 +1,8 @@
 let modInfo = {
-	name: "The Loading Tree",
-	id: "mymod",
+	name: "The Ad Tree",
+	id: "the-ad-tree",
 	author: "witherpearl",
-	pointsName: "points",
+	pointsName: "dollars",
 	modFiles: ["layers.js", "tree.js"],
 
 	discordName: "",
@@ -13,7 +13,7 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
+	num: "0.1",
 	name: "Literally nothing",
 }
 
