@@ -10,11 +10,28 @@ addLayer("b", {
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "Ad coins", // Name of prestige currency
     upgrades: {
-        11: {
+        1: {
             title: "Sticky notes",
             description: "Double your point gain.",
             cost: new Decimal(1),
         },
+    },
+    buyables: { 
+        2: { 
+            cost(x) { 
+                return new Decimal(2).mul(x || getBuyableAmt(this.layer, this.id)) 
+            },
+            display() { 
+                return "Pass out paper ads" 
+            },
+            canAfford() { 
+                return player[this.layer].points.gte(this.cost()) 
+            },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmt(this.layer, this.id).add(1))
+            },
+        }, 
     },
     baseResource: "points", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
