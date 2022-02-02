@@ -11,7 +11,7 @@ addLayer("b", {
     resource: "Ad coins", // Name of prestige currency
     buyables: {
         12: {
-            cost(x) { return new Decimal(2).mul(x) },
+            cost(x) { return new Decimal(2).mul(2) },
             display() { return "Pass out paper ads" },
             canAfford() { return player[this.layer].points.gte(this.cost()) },
             buy() {
