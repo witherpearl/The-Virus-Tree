@@ -9,13 +9,6 @@ addLayer("i", {
     color: "#ff4d4d",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "Ad coins", // Name of prestige currency
-    upgrades: {
-        11: {
-            title: "",
-            description: "Double your point gain.",
-            cost: new Decimal(1),
-        },
-    },
     bars: {
         bigBar: {
             direction: RIGHT,
@@ -25,6 +18,14 @@ addLayer("i", {
             display() { return ((new Decimal()/7,925,219,603)/100) },
         },
     },
+    upgrades: {
+        11: {
+            title: "",
+            description: "Double your point gain.",
+            cost: new Decimal(1),
+        },
+    },
+
     baseResource: "dollars", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
