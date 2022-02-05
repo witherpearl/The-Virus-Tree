@@ -54,14 +54,6 @@ function addedPlayerData() { return {
 
 // Display extra things at the top of the page
 var displayThings = [
-	bars: {
-		bigBar: {
-			direction: RIGHT,
-			width: 200,
-			height: 50,
-			progress() { return 0 },
-		},
-	},
 ]
 
 // Determines when the game "ends"
